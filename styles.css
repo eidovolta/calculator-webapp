@@ -9,6 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: aquamarine;
 }
 
 button {
@@ -33,16 +34,22 @@ button {
 
 #container-display {
     display: flex;
-    flex: 0 1 100px;
+    flex: 0 1 90px;
     border: 2px solid black;
+    padding: 5px;
     border-bottom: 0px;
-    background-color: darkgrey;
+    background-color: olive;
 }
 
 #display {
     flex: 1 1 auto;
+    border: 2px solid olivedrab;
     background-color: rgb(175, 175, 113);
-    height: 100px;
+    font-size: 40px;
+    text-align: right;
+    height: 76px;
+    line-height: 76px;
+    padding: 5px;
 }
 
 #container-buttons {
@@ -65,4 +72,28 @@ button.operator {
 
 button.special {
     background-color: orange;
+}
+
+button.number:hover {
+    background-color: rgb(185, 185, 185);;
+}
+
+button.operator:hover {
+    background-color: rgb(203, 103, 92);
+}
+
+button.special:hover {
+    background-color: rgb(190, 124, 0);
+}
+
+button.number:active {
+    transform: scale(0.9);
+}
+
+button.operator:active {
+    transform: scale(0.9);
+}
+
+button.special:active {
+    transform: scale(0.9);
 }
