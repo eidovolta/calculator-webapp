@@ -38,15 +38,10 @@ function clearCalculator() {
  */
 function processOperator() {
     if (currentNumber && previousNumber && operator) {
-        const swap = currentNumber;
-        currentNumber = operate(previousNumber, currentNumber, operator);
-        display.textContent = currentNumber;
-        /* Make sure it can fit on the display */
-        if (display.textContent.length > 8) {
-            display.textContent = display.textContent.substring(0, 8);
-            currentNumber = parseFloat(display.textContent);
-        }
-        previousNumber = swap;
+        previousNumber = operate(previousNumber, currentNumber, operator);
+        previousNumber = parseFloat(previousNumber.toString().substring(0, 8));
+        display.textContent = "";
+        currentNumber = null;
         operator = this.textContent;
     } else {
         previousNumber = currentNumber;
@@ -61,15 +56,11 @@ function processOperator() {
  */
 function processEquals() {
     if (currentNumber && previousNumber && operator) {
-        const swap = currentNumber;
-        currentNumber = operate(previousNumber, currentNumber, operator);
-        display.textContent = currentNumber;
-        /* Make sure it can fit on the display */
-        if (display.textContent.length > 8) {
-            display.textContent = display.textContent.substring(0, 8);
-            currentNumber = parseFloat(display.textContent);
-        }
-        previousNumber = swap;
+        previousNumber = operate(previousNumber, currentNumber, operator);
+        previousNumber = parseFloat(previousNumber.toString().substring(0, 8));
+        display.textContent = previousNumber;
+        currentNumber = null;
+        operator = null;
     }
 }
 
